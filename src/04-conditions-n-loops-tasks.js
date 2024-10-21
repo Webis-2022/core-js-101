@@ -331,7 +331,6 @@ function isCreditCardNumber(str) {
  */
 function getDigitalRoot(num) {
   const arr = num.toString().split('').map(Number);
-  console.log(arr);
   const sum = arr.reduce((acc, item) => acc + item, 0);
   if (sum <= 9) {
     return sum;
@@ -384,7 +383,6 @@ function isBracketsBalanced(str) {
       stack.pop();
     }
   }
-  console.log(stack.length);
   return stack.length === 0;
 }
 

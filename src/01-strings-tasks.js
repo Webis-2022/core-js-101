@@ -223,7 +223,6 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-  console.log(width, height);
   const dashes = '─'.repeat(width - 2);
   let middle = '';
   const upperLine = `┌${dashes}┐`;
