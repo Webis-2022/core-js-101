@@ -460,10 +460,27 @@ function getCommonDirectoryPath(paths) {
  *                         [ 6 ]]
  *
  */
-function getMatrixProduct(/* m1, m2 */) {
-  throw new Error('Not implemented');
-}
 
+function getMatrixProduct(m1, m2) {
+  if (m1[0].length !== m2.length) {
+    throw new Error('Matrix dimensions are not correct');
+  }
+
+  const result = [];
+
+  for (let i = 0; i < m1.length; i += 1) {
+    result[i] = new Array(m2[0].length).fill(0);
+  }
+
+  for (let i = 0; i < m1.length; i += 1) {
+    for (let j = 0; j < m2[0].length; j += 1) {
+      for (let k = 0; k < m2.length; k += 1) {
+        result[i][j] += m1[i][k] * m2[k][j];
+      }
+    }
+  }
+  return result;
+}
 
 /**
  * Returns the evaluation of the specified tic-tac-toe position.
